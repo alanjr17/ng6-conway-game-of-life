@@ -1,6 +1,9 @@
 <section ng-show="$ctrl.grid.length">
   <h3>Conway Grid</h3>
   <label>Iteration: {{$ctrl.iteration}}</label>
+  <div class="alert alert-danger" ng-show="$ctrl.gameOver">
+    Game Over! Everyone dies.
+  </div>
   <div class="row">
     <div class="col-sm-2">
       <div class="form-group">

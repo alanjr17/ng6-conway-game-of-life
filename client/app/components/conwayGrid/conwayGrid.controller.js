@@ -19,6 +19,7 @@ class ConwayGridController {
    */
   initGrid() {
     this.grid = [];
+    this.gameOver = false;
     for(let row = 0; row < this.rowSize; row++) {
       let currentRow = [];
       for(let cell = 0; cell < this.colSize; cell++) {
@@ -86,10 +87,19 @@ class ConwayGridController {
    * with "willLive" value.
    */
   updateCellsFuture() {
+    let allDeath = true;
     for(let row = 0; row < this.rowSize; row++) {
       for(let cell = 0; cell < this.colSize; cell++) {
         this.grid[row][cell].alive = this.grid[row][cell].willLive; 
+        if ( this.grid[row][cell].alive ) {
+          allDeath = false;
+        }
       }
+    }
+    /* If all cells are Death, Stop de game and enable flag to show an Alert on Screen*/
+    if (allDeath) {
+      this.stopGame();
+      this.gameOver = true;
     }
   }
 
