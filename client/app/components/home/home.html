@@ -1,7 +1,20 @@
-<hero></hero>
+<h1 class="title text-center">Conway's Game of Life</h1>
 
-<h1 class="title">{{ $ctrl.name }}</h1>
 <section>
-  Found in {{ $ctrl.name }}.html
+  <h4>Grid Size</h4>
+  <div class="form-row">
+    <div class="form-group col-sm-6">
+      <small class="form-text text-muted">Row Size</small>
+      <input type="number" class="form-control" ng-model="$ctrl.rowSize">
+    </div>
+    <div class="form-group col-sm-6">
+      <small class="form-text text-muted">Col Size</small>
+      <input type="number" class="form-control" ng-model="$ctrl.colSize">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-dark" ng-click="$ctrl.generateGrid()">Generate</button>
 </section>
+
+<hr>
+
 <conway-grid></conway-grid>

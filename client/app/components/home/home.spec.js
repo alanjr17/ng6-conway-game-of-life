@@ -2,30 +2,14 @@ import HomeModule from './home';
 
 describe('Home', () => {
   let $rootScope;
-  let $state;
-  let $location;
   let $componentController;
-  let $compile;
 
   beforeEach(window.module(HomeModule));
 
   beforeEach(inject(($injector) => {
     $rootScope = $injector.get('$rootScope');
     $componentController = $injector.get('$componentController');
-    $state = $injector.get('$state');
-    $location = $injector.get('$location');
-    $compile = $injector.get('$compile');
   }));
-
-  describe('Module', () => {
-    // top-level specs: i.e., routes, injection, naming
-    it('default component should be home', () => {
-      $location.url('/');
-      $rootScope.$digest();
-
-      expect($state.current.component).toEqual('home');
-    });
-  });
 
   describe('Controller', () => {
     // controller specs
@@ -36,24 +20,9 @@ describe('Home', () => {
       });
     });
 
-    it('has a name property', () => { // erase if removing this.name from the controller
-      expect(controller.name).toBeDefined();
-    });
-  });
-
-  describe('View', () => {
-    // view layer specs.
-    let scope;
-    let template;
-
-    beforeEach(() => {
-      scope = $rootScope.$new();
-      template = $compile('<home></home>')(scope);
-      scope.$apply();
-    });
-
-    it('has name in template', () => {
-      expect(template.find('h1').html()).toEqual('home');
+    it('has initial grid size', () => { 
+      expect(controller.rowSize).toBe(50);
+      expect(controller.colSize).toBe(50);
     });
   });
 });
