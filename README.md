@@ -17,11 +17,11 @@ yarn installed
 
 After clone the repo run:
 
-$yarn
+`$ yarn`
 
 Then run the application with:
 
-$npm run start
+`$ npm run start`
 
 Go to http:localhost:3000/
 
@@ -29,7 +29,7 @@ Go to http:localhost:3000/
 
 To run the test run:
 
-$npm run test
+`$ npm run test`
 
 
 
