@@ -1,0 +1,10 @@
+.grid-cell {
+  width: 10px;
+  height: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid lightgray;
+
+  &.alive {
+    background-color: #17a2b8;
+  }
+}

@@ -1,1 +1,11 @@
-<h1>Conway Grid Component</h1>
+<section ng-show="$ctrl.grid.length">
+  <h3>Conway Grid</h3>
+  <div class="row">
+    <table>
+      <tr ng-repeat="row in $ctrl.grid">
+        <td class="grid-cell" ng-repeat="col in row" ng-class="{alive: col.alive}"></td>
+      </tr>
+    </table>
+  </div>
+    
+</section>
