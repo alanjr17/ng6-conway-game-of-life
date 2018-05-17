@@ -28,7 +28,23 @@ class ConwayGridController {
   }
 
   startGame() {
-    console.log('Start Game');
+    this.loopCellMatrix();
+    this.iteration++;
+  }
+
+  /**
+   * Iterate all Matrix and call a function to evaluate each cell neighbors
+   */
+  loopCellMatrix() {
+    for(let row = 0; row < this.rowSize; row++) {
+      for(let cell = 0; cell < this.colSize; cell++) {
+        console.log(this.decideCellFuture(row, cell));
+      }
+    }
+  }
+
+  decideCellFuture(indexR, indexC) {
+    console.log('Check neighbors');
   }
 
   stopGame() {
