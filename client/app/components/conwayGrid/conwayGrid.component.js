@@ -4,7 +4,10 @@ import './conwayGrid.scss';
 
 const conwayGridComponent = {
   restrict: 'E',
-  bindings: {},
+  bindings: {
+    rowSize: '<',
+    colSize: '<'
+  },
   template,
   controller,
 };

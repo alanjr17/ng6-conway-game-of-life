@@ -13,7 +13,7 @@ class HomeController {
    * @return  {boolean}
    */
   generateGrid() {
-    console.log('generateGrid');
+    this.$scope.$broadcast('generateGrid');
   }
 }
 
