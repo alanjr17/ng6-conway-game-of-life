@@ -29,6 +29,7 @@ class ConwayGridController {
 
   startGame() {
     this.loopCellMatrix();
+    this.updateCellsFuture();
     this.iteration++;
   }
 
@@ -38,7 +39,7 @@ class ConwayGridController {
   loopCellMatrix() {
     for(let row = 0; row < this.rowSize; row++) {
       for(let cell = 0; cell < this.colSize; cell++) {
-        console.log(this.decideCellFuture(row, cell));
+        this.grid[row][cell].willLive = this.decideCellFuture(row, cell);
       }
     }
   }
@@ -68,6 +69,18 @@ class ConwayGridController {
       return true;
     } else {
       return false;
+    }
+  }
+
+  /**
+   * After being evaluated all the grid, Iterate all cells and UPDATE current "alive" status
+   * with "willLive" value.
+   */
+  updateCellsFuture() {
+    for(let row = 0; row < this.rowSize; row++) {
+      for(let cell = 0; cell < this.colSize; cell++) {
+        this.grid[row][cell].alive = this.grid[row][cell].willLive; 
+      }
     }
   }
 
