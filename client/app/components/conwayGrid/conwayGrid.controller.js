@@ -43,8 +43,32 @@ class ConwayGridController {
     }
   }
 
+   /**
+   * This functions iterate all 8 neighbors and count alive ones.
+   * After count, apply the GAME RULES and decide which cell will live or die.
+   * @param  {int} indexR Receive current row pointer
+   * @param  {int} indexC Receive current cell pointer
+   * @return  {boolean} Return what will be the condition of this cell for the next iteration
+   */
   decideCellFuture(indexR, indexC) {
-    console.log('Check neighbors');
+    let aliveNgh = 0;
+
+    for(let row = indexR-1; row <= indexR+1; row++) {
+      for(let cell = indexC-1; cell <= indexC+1; cell++) {
+        if( this.grid[row] && this.grid[row][cell] && (row!=indexR || cell!=indexC) 
+          && this.grid[row][cell].alive) {
+          aliveNgh++;
+        }
+      }
+    }
+
+    if( aliveNgh == 3 ) {
+      return true;
+    } else if ( aliveNgh == 2 && this.grid[indexR][indexC].alive) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   stopGame() {
