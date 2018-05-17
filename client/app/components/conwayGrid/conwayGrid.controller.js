@@ -109,6 +109,24 @@ class ConwayGridController {
     this.iteration = 0;
   }
 
+  setPeriod15() {
+    this.initGrid();
+    this.iteration = 0;
+
+    this.grid[10][25].alive = true;
+    this.grid[11][25].alive = true;
+    this.grid[12][24].alive = true;
+    this.grid[12][26].alive = true;
+    this.grid[13][25].alive = true;
+    this.grid[14][25].alive = true;
+    this.grid[15][25].alive = true;
+    this.grid[16][25].alive = true;
+    this.grid[17][24].alive = true;
+    this.grid[17][26].alive = true;
+    this.grid[18][25].alive = true;
+    this.grid[19][25].alive = true;
+  }
+
   setDefaultSeeds(){
     this.grid[0][0].alive = true;
     this.grid[0][1].alive = true;
