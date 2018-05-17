@@ -1,87 +1,38 @@
-# Project Title
+# Conway's Game of Life
 
-One Paragraph of project description goes here
+This project based on NG6-Starter, shows an application in AngularJS 1.6 about the Conway's Game of Life.
+
+More info here: https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+You can dowload or clone this public Repo.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+npm installed
+yarn installed
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
+After clone the repo run:
 
-Say what the step will be
+$yarn
 
-```
-Give the example
-```
+Then run the application with:
 
-And repeat
+$npm run start
 
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+Go to http:localhost:3000/
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+To run the test run:
 
-### Break down into end to end tests
+$npm run test
 
-Explain what these tests test and why
 
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* **Alan Martínez Bello**
