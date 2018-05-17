@@ -1,8 +1,9 @@
 class ConwayGridController {
   /* @ngInject */
-  constructor($scope) {
+  constructor($scope, $interval) {
     var _this = this;
     this.$scope = $scope;
+    this.$interval = $interval;
 
     this.$scope.$on('generateGrid', function(event, data) {
       _this.initGrid();
@@ -27,10 +28,18 @@ class ConwayGridController {
     }
   }
 
+  /**
+   * Init an infinite Loop that call cicle functions.
+   * 1. Iterate all cells and apply game rules to eval next step behavior.
+   * 2. After evaluate all cells, update all status for the next step.
+   * 3. Increase iteration counter 
+   */
   startGame() {
-    this.loopCellMatrix();
-    this.updateCellsFuture();
-    this.iteration++;
+    this.interval = this.$interval(() => {
+      this.loopCellMatrix();
+      this.updateCellsFuture();
+      this.iteration++;
+    }, 300);
   }
 
   /**
@@ -84,8 +93,11 @@ class ConwayGridController {
     }
   }
 
+  /**
+   * Cancel game interval
+   */
   stopGame() {
-    console.log('Stop Game');
+    this.$interval.cancel(this.interval);
   }
 
   /**
